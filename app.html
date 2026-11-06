@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <title>Mobile App | InsurePro — Download the Insurance App</title>
+    <meta name="description" content="Install the InsurePro mobile app on Android or iPhone. File claims in under 2 minutes, carry digital ID cards, get renewal alerts and talk to a licensed agent — even offline.">
+    <meta name="theme-color" content="#0B1F3A">
+
+    <!-- Favicon (inline shield) -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 2 4 7v9c0 7.5 5.1 12.4 12 14 6.9-1.6 12-6.5 12-14V7L16 2z' fill='%230066FF'/%3E%3Cpath d='m10 16 4 4 8-8' stroke='white' stroke-width='2.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="InsurePro">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="main.css">
+    <script>
+        document.documentElement.classList.add('js');
+        try {
+            var t = localStorage.getItem('ip-theme');
+            if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', t);
+        } catch (e) { document.documentElement.setAttribute('data-theme', 'light'); }
+    </script>
+</head>
+<body class="page-app">
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="top">
+    <nav class="navbar container" aria-label="Main navigation">
+        <a class="logo" href="index.html" aria-label="InsurePro home">
+            <svg class="logo-mark" viewBox="0 0 32 32" width="34" height="34" aria-hidden="true">
+                <path d="M16 2 4 7v9c0 7.5 5.1 12.4 12 14 6.9-1.6 12-6.5 12-14V7L16 2z" fill="#0066FF"/>
+                <path d="m10 16 4 4 8-8" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Insure<em>Pro</em></span>
+        </a>
+
+        <button
+            class="nav-toggle"
+            id="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="nav-menu"
+            aria-label="Open menu">
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+        </button>
+
+        <div class="nav-menu" id="nav-menu">
+            <ul class="nav-links">
+                <li><a href="index.html#products">Insurance</a></li>
+                <li><a href="index.html#how">How it works</a></li>
+                <li><a href="index.html#compare">Compare Plans</a></li>
+                <li><a href="index.html#claims">Claims</a></li>
+                <li><a href="app.html" class="is-active" aria-current="page">Mobile App</a></li>
+                <li><a href="index.html#faq">Resources</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" title="Toggle dark mode">
+                    <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+                    <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4m11.4-11.4 1.4-1.4"/></svg>
+                </button>
+                <a href="signup.html" class="btn btn-ghost">Sign up</a>
+                <a href="index.html#quote" class="btn btn-primary">Get a free quote</a>
+            </div>
+        </div>
+    </nav>
+    <div class="nav-backdrop" id="nav-backdrop" hidden></div>
+</header>
+
+<main id="main">
+
+<!-- ============ APP HERO ============ -->
+<section class="app-hero">
+    <div class="container app-hero-grid">
+        <div class="app-hero-copy">
+            <span class="pill" data-reveal>
+                <span class="stars" aria-hidden="true">★★★★★</span>
+                4.8/5 &nbsp;·&nbsp; 61,000+ installs
+            </span>
+
+            <h1 data-reveal>The InsurePro app for people who <span class="hl">never open a browser</span></h1>
+
+            <p class="lead" data-reveal>
+                Quotes, digital ID cards, claims and your advisor — in one lightweight app.
+                Install it once and handle everything from your home screen, with or without a connection.
+            </p>
+
+            <div class="app-cta" data-reveal>
+                <button type="button" class="btn btn-primary btn-lg" id="btn-install">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M4 20h16"/></svg>
+                    Install the app
+                </button>
+                <a href="#download" class="btn btn-outline btn-lg">Installation guide</a>
+            </div>
+
+            <p class="app-installed" id="app-installed" hidden>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>
+                InsurePro is installed on this device — open it from your home screen.
+            </p>
+
+            <ul class="app-meta" data-reveal>
+                <li>
+                    <strong>Under 2 MB</strong>
+                    <span>Featherweight install</span>
+                </li>
+                <li>
+                    <strong>Works offline</strong>
+                    <span>Cards &amp; policies cached</span>
+                </li>
+                <li>
+                    <strong>No app store</strong>
+                    <span>Installs straight from here</span>
+                </li>
+                <li>
+                    <strong>Free forever</strong>
+                    <span>No subscription, no ads</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Phone mockup -->
+        <div class="app-visual" data-reveal aria-hidden="true">
+            <div class="phone">
+                <div class="phone-notch"></div>
+                <div class="phone-screen">
+                    <div class="mock-status"><span>9:41</span><span class="mock-signal">●●●</span></div>
+
+                    <div class="mock-head">
+                        <div>
+                            <span class="mock-hello">Good morning,</span>
+                            <strong>Sarah Chen</strong>
+                        </div>
+                        <span class="mock-avatar">SC</span>
+                    </div>
+
+                    <div class="mock-card">
+                        <span class="mock-card-label">Auto policy · Harbor Point</span>
+                        <div class="mock-card-row">
+                            <strong>AUTO-88421</strong>
+                            <span class="mock-chip">Active</span>
+                        </div>
+                        <div class="mock-card-meta">
+                            <span>Renews 01 Aug 2026</span>
+                            <span>$97/mo</span>
+                        </div>
+                    </div>
+
+                    <div class="mock-actions">
+                        <div><span class="mock-ico">⧉</span>Digital ID</div>
+                        <div><span class="mock-ico">⚑</span>File claim</div>
+                        <div><span class="mock-ico">$</span>New quote</div>
+                        <div><span class="mock-ico">☎</span>Agent</div>
+                    </div>
+
+                    <div class="mock-list">
+                        <div class="mock-list-item">
+                            <span class="mock-dot mock-dot-green"></span>
+                            <div><strong>Claim CLM-5510 paid</strong><span>$640 · 36 hours</span></div>
+                        </div>
+                        <div class="mock-list-item">
+                            <span class="mock-dot"></span>
+                            <div><strong>Home quote ready</strong><span>3 carriers compared</span></div>
+                        </div>
+                    </div>
+
+                    <div class="mock-tabs">
+                        <span class="is-on">Home</span>
+                        <span>Policies</span>
+                        <span>Claims</span>
+                        <span>Profile</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="float-badge float-badge-offline">
+                <span class="badge-icon badge-icon-green">
+                    <svg viewBox="0 0 24 24" width="18" height="18"><path fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></svg>
+                </span>
+                <div><strong>Offline ready</strong><span>Works with no signal</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ FEATURES ============ -->
+<section class="app-features" id="features">
+    <div class="container">
+        <div class="section-head" data-reveal>
+            <span class="eyebrow">In the app</span>
+            <h2>Everything the website does — one tap away</h2>
+            <p>Built for policyholders who would rather not log in to a website on a phone browser.</p>
+        </div>
+
+        <div class="feature-grid">
+            <article class="feature-card" data-reveal>
+                <span class="feature-ico">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6l4 4v14H5V3z"/><path d="M9 12h6M9 16h4"/></svg>
+                </span>
+                <h3>Digital ID cards</h3>
+                <p>Proof of insurance that police and lenders accept — reachable from the lock screen.</p>
+            </article>
+
+            <article class="feature-card" data-reveal>
+                <span class="feature-ico">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6.5v6c0 5 3.4 8.6 8 9.5 4.6-.9 8-4.5 8-9.5v-6z"/><path d="M12 8v4l3 2"/></svg>
+                </span>
+                <h3>Claims in 2 minutes</h3>
+                <p>Snap photos, describe the incident, and track your adjuster with live status updates.</p>
+            </article>
+
+            <article class="feature-card" data-reveal>
+                <span class="feature-ico">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V9M12 19V5M20 19v-6"/></svg>
+                </span>
+                <h3>Compare in-app</h3>
+                <p>Run a fresh quote against 40+ carriers without ever leaving the app.</p>
+            </article>
+
+            <article class="feature-card" data-reveal>
+                <span class="feature-ico">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1z"/></svg>
+                </span>
+                <h3>One-tap agent call</h3>
+                <p>Your named advisor's direct line — no queues, no re-explaining your situation.</p>
+            </article>
+
+            <article class="feature-card" data-reveal>
+                <span class="feature-ico">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M18 9a6 6 0 1 0-12 0c0 6-2 7-2 7h16s-2-1-2-7"/><path d="M10.5 20a2 2 0 0 0 3 0"/></svg>
+                </span>
+                <h3>Renewal alerts</h3>
+                <p>Push notifications before every renewal, payment and claims milestone.</p>
+            </article>
+
+            <article class="feature-card" data-reveal>
+                <span class="feature-ico">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg>
+                </span>
+                <h3>Biometric lock</h3>
+                <p>Face or fingerprint unlock, 256-bit encryption, auto-lock after 60 seconds idle.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- ============ DOWNLOAD ============ -->
+<section class="app-download" id="download">
+    <div class="container">
+        <div class="section-head" data-reveal>
+            <span class="eyebrow">Download</span>
+            <h2>Get the InsurePro app on your phone</h2>
+            <p>No Google Play or App Store account required — install directly from this page in under a minute.</p>
+        </div>
+
+        <div class="store-grid">
+            <article class="store-card" data-reveal>
+                <div class="store-head">
+                    <span class="store-logo" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M17.6 9.5 15.4 7.3 5.9 16.8a1.7 1.7 0 0 0 0 2.4l1.1 1.1 9.6-9.5zM4.6 5.4A1.7 1.7 0 0 0 4 6.6v10.8c0 .5.2 1 .6 1.3l9-9zM19.6 10.9l-2.6-1.5-2.4 2.4 2.4 2.4 2.6-1.5c.7-.4.7-1.4 0-1.8zM7 4.1l9.5 5.4 2.1-2.1L7.5 3.7A1.7 1.7 0 0 0 7 4.1z"/></svg>
+                    </span>
+                    <div>
+                        <h3>Android</h3>
+                        <p>Samsung · Xiaomi · OnePlus · Tecno · Infinix · all Chrome browsers</p>
+                    </div>
+                </div>
+
+                <ol class="store-steps">
+                    <li><span>1</span>Open this page in Chrome or your phone browser</li>
+                    <li><span>2</span>Tap <strong>Install the app</strong> — or the ⋮ menu → <strong>Add to Home screen</strong></li>
+                    <li><span>3</span>Confirm the InsurePro icon appears on your home screen</li>
+                </ol>
+
+                <button type="button" class="btn btn-primary btn-block btn-lg" data-install>Install on Android</button>
+                <p class="store-note">Android 8.0+ · Chrome 90+ · approx. 2 MB</p>
+            </article>
+
+            <article class="store-card" data-reveal>
+                <div class="store-head">
+                    <span class="store-logo" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M16.4 12.7c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.9-1.4-.1-2.8.9-3.5.9-.7 0-1.9-.9-3.1-.8-1.6 0-3 .9-3.8 2.4-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.7 3.1-.7 1.4 0 1.8.7 3.1.7 1.3 0 2.1-1.1 2.9-2.3.9-1.3 1.3-2.6 1.3-2.7 0 0-2.6-1-2.7-3.7zM14.1 5.6c.6-.8 1.1-1.9 1-3-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.8-1 2.9 1.1.1 2.2-.6 2.9-1.4z"/></svg>
+                    </span>
+                    <div>
+                        <h3>iPhone &amp; iPad</h3>
+                        <p>Safari on iOS 14+ · iPadOS · macOS Safari</p>
+                    </div>
+                </div>
+
+                <ol class="store-steps">
+                    <li><span>1</span>Open this page in <strong>Safari</strong> on your iPhone</li>
+                    <li><span>2</span>Tap the <strong>Share</strong> button → <strong>Add to Home Screen</strong></li>
+                    <li><span>3</span>Tap <strong>Add</strong> — the InsurePro icon lands on your home screen</li>
+                </ol>
+
+                <button type="button" class="btn btn-primary btn-block btn-lg" data-install>Add on iPhone</button>
+                <p class="store-note">iOS 14+ · Safari · no App Store account needed</p>
+            </article>
+        </div>
+
+        <div class="install-help" data-reveal>
+            <div>
+                <h3>Already installed?</h3>
+                <p>The button below will simply open the app on this device. If it does nothing, launch InsurePro from your home screen instead.</p>
+            </div>
+            <div class="install-help-actions">
+                <button type="button" class="btn btn-outline" data-open-app>Open InsurePro app</button>
+                <button type="button" class="btn btn-ghost" id="btn-copy-link">Copy download link</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ OFFLINE / TECH SPECS ============ -->
+<section class="app-specs" id="specs">
+    <div class="container specs-grid">
+        <div class="specs-copy" data-reveal>
+            <span class="eyebrow">Built for every phone</span>
+            <h2>Light enough for any device — even on a slow connection</h2>
+            <p>InsurePro is a progressive web app: it installs instantly, occupies less space than a single photo, and caches your policies so your ID card is available even in airplane mode or on a rural 2G network.</p>
+
+            <ul class="bundle-perks specs-list">
+                <li>
+                    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></svg>
+                    Installs from the browser — no store review, no region lock
+                </li>
+                <li>
+                    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></svg>
+                    Updates itself silently — always on the latest version
+                </li>
+                <li>
+                    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></svg>
+                    Works in low-data mode and offline once installed
+                </li>
+                <li>
+                    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></svg>
+                    No tracking of your location or contacts — ever
+                </li>
+            </ul>
+        </div>
+
+        <div class="specs-table-wrap" data-reveal>
+            <table class="specs-table">
+                <caption class="sr-only">InsurePro mobile app technical specifications</caption>
+                <tbody>
+                    <tr><th scope="row">Version</th><td>1.0.0 (build 2026.11)</td></tr>
+                    <tr><th scope="row">Download size</th><td>≈ 1.8 MB</td></tr>
+                    <tr><th scope="row">Compatible with</th><td>Android 8.0+ · iOS 14+ · any Chromium browser</td></tr>
+                    <tr><th scope="row">Languages</th><td>English, Spanish, French</td></tr>
+                    <tr><th scope="row">Offline mode</th><td>Yes — ID cards, policies, claim history</td></tr>
+                    <tr><th scope="row">Security</th><td>256-bit TLS · biometric lock · SOC 2 Type II</td></tr>
+                    <tr><th scope="row">Price</th><td>Free — no ads, no in-app purchases</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- ============ APP FAQ ============ -->
+<section class="faq" id="app-faq">
+    <div class="container faq-grid">
+        <div class="faq-intro" data-reveal>
+            <span class="eyebrow">App FAQ</span>
+            <h2>Before you install</h2>
+            <p>Still unsure? Our licensed agents answer 7 days a week.</p>
+            <a href="tel:18005550199" class="btn btn-outline">
+                <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1z"/></svg>
+                1-800-555-0199
+            </a>
+        </div>
+
+        <div class="faq-list">
+            <details open data-reveal>
+                <summary>Why isn't the app on Google Play or the App Store?</summary>
+                <p>InsurePro installs directly from this page as a progressive web app. You get the same experience — home-screen icon, offline access, push-style alerts — without store accounts, region restrictions or waiting for an approval. The download is signed and served over the same 256-bit encrypted connection as the rest of our site.</p>
+            </details>
+            <details data-reveal>
+                <summary>Is my policy data available offline?</summary>
+                <p>Yes. Once installed, your declarations pages, digital ID cards and claim history are cached on the device, so you can show proof of insurance with no signal at all. Live actions such as new quotes or filing a claim reconnect automatically when you are back online.</p>
+            </details>
+            <details data-reveal>
+                <summary>How do I remove the app?</summary>
+                <p>Delete it exactly like any other app: hold the InsurePro icon and choose remove/delete. No account is closed and no data is lost — everything stays in your InsurePro account, and you can reinstall at any time from this page.</p>
+            </details>
+            <details data-reveal>
+                <summary>Does it work on shared or work phones?</summary>
+                <p>Yes. The app is locked behind your InsurePro credentials or biometrics, auto-locks after 60 seconds idle, and never stores your payment details on the device.</p>
+            </details>
+        </div>
+    </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final-cta">
+    <div class="container final-inner" data-reveal>
+        <div>
+            <h2>Not an app person? We still have you covered.</h2>
+            <p>Create a client profile in under two minutes and a licensed advisor will call you with matched quotes.</p>
+        </div>
+        <div class="final-actions">
+            <a href="signup.html" class="btn btn-light btn-lg">Create my profile</a>
+            <a href="tel:18005550199" class="btn btn-outline-light btn-lg">Call 1-800-555-0199</a>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer id="footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <a class="logo logo-light" href="index.html" aria-label="InsurePro home">
+                    <svg class="logo-mark" viewBox="0 0 32 32" width="30" height="30" aria-hidden="true">
+                        <path d="M16 2 4 7v9c0 7.5 5.1 12.4 12 14 6.9-1.6 12-6.5 12-14V7L16 2z" fill="#4D94FF"/>
+                        <path d="m10 16 4 4 8-8" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Insure<em>Pro</em></span>
+                </a>
+                <p>The independent insurance marketplace that compares 40+ A-rated carriers so you never overpay again.</p>
+
+                <ul class="social">
+                    <li><a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5H16.7V4c-.3 0-1.3-.1-2.4-.1-2.4 0-4.1 1.5-4.1 4.2V10H7.5v3h2.7v8h3.3z"/></svg></a></li>
+                    <li><a href="#" aria-label="X"><svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M17.5 3h3l-6.6 7.5L21.7 21h-6l-4.7-6.1L5.6 21h-3l7-8L2.6 3h6.1l4.3 5.6L17.5 3zm-1.1 16.2h1.7L7.7 4.7H5.9l10.5 14.5z"/></svg></a></li>
+                    <li><a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M6.9 20H3.7V9h3.2v11zM5.3 7.6A1.9 1.9 0 1 1 5.3 3.8a1.9 1.9 0 0 1 0 3.8zM20.3 20h-3.2v-5.6c0-1.5-.5-2.5-1.8-2.5-1 0-1.6.7-1.8 1.3-.1.2-.1.6-.1.9V20H10V9h3.2v1.5c.4-.7 1.2-1.8 3.1-1.8 2.3 0 4 1.5 4 4.7V20z"/></svg></a></li>
+                    <li><a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 4.6c2.4 0 2.7 0 3.6.1.9 0 1.4.2 1.7.3.4.2.7.4 1 .7.3.3.5.6.7 1 .1.3.3.8.3 1.7.1.9.1 1.2.1 3.6s0 2.7-.1 3.6c0 .9-.2 1.4-.3 1.7-.2.4-.4.7-.7 1-.3.3-.6.5-1 .7-.3.1-.8.3-1.7.3-.9.1-1.2.1-3.6.1s-2.7 0-3.6-.1c-.9 0-1.4-.2-1.7-.3-.4-.2-.7-.4-1-.7-.3-.3-.5-.6-.7-1-.1-.3-.3-.8-.3-1.7-.1-.9-.1-1.2-.1-3.6s0-2.7.1-3.6c0-.9.2-1.4.3-1.7.2-.4.4-.7.7-1 .3-.3.6-.5 1-.7.3-.1.8-.3 1.7-.3.9-.1 1.2-.1 3.6-.1M12 3c-2.4 0-2.8 0-3.7.1-.9 0-1.6.2-2.1.4-.6.2-1.1.5-1.6 1-.5.5-.8 1-1 1.6-.2.5-.4 1.2-.4 2.1C3 9.2 3 9.6 3 12s0 2.8.1 3.7c0 .9.2 1.6.4 2.1.2.6.5 1.1 1 1.6.5.5 1 .8 1.6 1 .5.2 1.2.4 2.1.4.9.1 1.3.1 3.7.1s2.8 0 3.7-.1c.9 0 1.6-.2 2.1-.4.6-.2 1.1-.5 1.6-1 .5-.5.8-1 1-1.6.2-.5.4-1.2.4-2.1.1-.9.1-1.3.1-3.7s0-2.8-.1-3.7c0-.9-.2-1.6-.4-2.1-.2-.6-.5-1.1-1-1.6-.5-.5-1-.8-1.6-1-.5-.2-1.2-.4-2.1-.4C14.8 3 14.4 3 12 3zm0 4.4a4.6 4.6 0 1 0 0 9.2 4.6 4.6 0 0 0 0-9.2zm0 7.6a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm5.9-7.8a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0z"/></svg></a></li>
+                </ul>
+            </div>
+
+            <nav class="footer-cols" aria-label="Footer">
+                <div>
+                    <h4>Insurance</h4>
+                    <a href="index.html#products">Auto</a>
+                    <a href="index.html#products">Homeowners</a>
+                    <a href="index.html#products">Health</a>
+                    <a href="index.html#products">Life</a>
+                    <a href="index.html#products">Renters</a>
+                    <a href="index.html#products">Business</a>
+                </div>
+                <div>
+                    <h4>Company</h4>
+                    <a href="#">About us</a>
+                    <a href="signup.html">Create an account</a>
+                    <a href="app.html">Mobile app</a>
+                    <a href="#">Careers</a>
+                    <a href="login.html?role=admin">Agent login</a>
+                </div>
+                <div>
+                    <h4>Resources</h4>
+                    <a href="#">Insurance guide</a>
+                    <a href="index.html#claims">Claims center</a>
+                    <a href="index.html#faq">Help center</a>
+                    <a href="#download">Download the app</a>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <a href="#">Terms of service</a>
+                    <a href="#">Privacy policy</a>
+                    <a href="#">Licenses (NPN #19883746)</a>
+                    <a href="#">Accessibility</a>
+                </div>
+            </nav>
+        </div>
+
+        <div class="footer-badges">
+            <span>🛡 256-bit SSL encryption</span>
+            <span>SOC 2 Type II certified</span>
+            <span>Norton Secured</span>
+            <span>BBB A+ accredited</span>
+            <span>WCAG 2.1 AA accessible</span>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© <span id="footer-year">2026</span> InsurePro Marketplace, Inc. All rights reserved.</p>
+            <p class="disclaimer">
+                InsurePro is a licensed insurance marketplace (NPN #19883746). Coverage availability, terms and
+                savings vary by state, carrier and individual risk profile. Quotes are provided by independent
+                carriers; InsurePro is not an insurer.
+            </p>
+        </div>
+    </div>
+</footer>
+
+<!-- Toast -->
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script src="script.js" defer></script>
+<script src="app.js" defer></script>
+</body>
+</html>
